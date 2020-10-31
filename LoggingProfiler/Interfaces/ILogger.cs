@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LoggingProfiler.Models;
+using System;
 
 namespace LoggingProfiler.Interfaces
 {
@@ -13,6 +14,8 @@ namespace LoggingProfiler.Interfaces
         void Error(Exception exception, string message);
 
         void Information(string message);
+
+        void Init(LoggerConfiguration loggerConfiguration);
 
         void Verbose(string message);
 
