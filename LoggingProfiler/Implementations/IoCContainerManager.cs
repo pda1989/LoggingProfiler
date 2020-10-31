@@ -1,5 +1,4 @@
 ﻿using Autofac;
-using LoggingProfiler.Models;
 
 namespace LoggingProfiler.Implementations
 {
@@ -21,11 +20,7 @@ namespace LoggingProfiler.Implementations
         {
             var containerBuiler = new ContainerBuilder();
 
-            var loggerConfiguration = new LoggerConfiguration();
-
-            containerBuiler.RegisterType<Logger>()
-                .WithParameter(new TypedParameter(typeof(LoggerConfiguration), loggerConfiguration))
-                .AsImplementedInterfaces().SingleInstance();
+            containerBuiler.RegisterType<Logger>().AsImplementedInterfaces().SingleInstance();
 
             _container = containerBuiler.Build();
         }
